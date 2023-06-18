@@ -1,0 +1,11 @@
+streamlit
+langchain
+subprocess
+os
+uuid
+rank_bm25
+tempfile
+re
+nltk
+requests
+json
