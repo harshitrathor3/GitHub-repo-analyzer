@@ -2,7 +2,6 @@ streamlit
 langchain
 uuid
 rank_bm25
-tempfile
 re
 nltk
 requests
