@@ -1,7 +1,5 @@
 streamlit
 langchain
-subprocess
-os
 uuid
 rank_bm25
 tempfile
