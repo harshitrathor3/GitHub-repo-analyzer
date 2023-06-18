@@ -4,12 +4,12 @@ from langchain.llms import OpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 
-from constants import openai_key, model
+
 from file_handler import clone_github_repo, load_and_index_files
 from utils import format_documents
 
 
-os.environ['OPENAI_API_KEY'] = openai_key
+os.environ['OPENAI_API_KEY'] = st.secrets["openai_key"]
 
 
 def main(url):
@@ -40,7 +40,7 @@ def main(url):
             
             print("Repositiries cloned and indexed")
 
-            llm = OpenAI(temperature=0.2, model=model, verbose=True)
+            llm = OpenAI(temperature=0.2, model='text-davinci-003', verbose=True)
 
             template = """
             
