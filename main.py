@@ -3,6 +3,7 @@ import tempfile
 from langchain.llms import OpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
+import streamlit as st
 
 
 from file_handler import clone_github_repo, load_and_index_files
