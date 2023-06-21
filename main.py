@@ -1,17 +1,15 @@
 import os
+import streamlit as st
 import tempfile
 from langchain.llms import OpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
-import streamlit as st
-
 
 from file_handler import clone_github_repo, load_and_index_files
 from utils import format_documents
 
 
 os.environ['OPENAI_API_KEY'] = st.secrets["openai_key"]
-
 
 def main(url):
     github_url = url
@@ -41,13 +39,13 @@ def main(url):
             
             print("Repositiries cloned and indexed")
 
-            llm = OpenAI(temperature=0.2, model='text-davinci-003', verbose=True)
+            llm = OpenAI(temperature=0.2, model='text-davinci-003')
 
             template = """
             
             Repo: {repo_name} ({github_url}) | Docs: {numbered_documents} | FileCont: {file_type_counts} | FileNames: {filenames}
 
-            What is the technical complexity of this repo in the range of 1 to 100? Also state the reason.
+            What is the complexity of this repository in the range of 1 to 100? Also state the reason.
 
             """
 
@@ -64,3 +62,5 @@ def main(url):
 
         else:
             print("\n\nCouldn't clone github repo\n\n")
+
+        
