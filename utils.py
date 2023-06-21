@@ -30,6 +30,7 @@ def get_all_repo_name(userid):
     data = json.loads(response.text)
     repos = []
     for i in data:
-        repos.append(i['name'])
+        print(i)
+        # repos.append(i['name'])
         
     return repos
