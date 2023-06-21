@@ -8,6 +8,7 @@ if __name__=='__main__':
     # text = 'https://github.com/cmooredev/RepoReader'
     # username = input('Enter the github username : ')
     st.title('GitHub Analyzer')
+    api_key = st.text_input('Enter your API key (this will be deleted when you close the application) : ')
     username = st.text_input('Enter the github username : ')
     if username:
         repos = get_all_repo_name(username)
