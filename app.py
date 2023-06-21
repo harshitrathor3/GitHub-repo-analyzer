@@ -1,4 +1,4 @@
-from main import main
+from mainn import main
 from utils import get_all_repo_name
 import streamlit as st
 
