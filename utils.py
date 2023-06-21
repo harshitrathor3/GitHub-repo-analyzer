@@ -6,11 +6,6 @@ from requests.auth import HTTPBasicAuth
 # from constants import github_token
 import json
 
-
-from app import api_key
-
-api_key = api_key
-
 def clean_and_tokenize(text):
     text = re.sub(r'\s+', ' ', text)
     text = re.sub(r'<[^>]*>', '', text)
