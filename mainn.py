@@ -6,10 +6,11 @@ from langchain.chains import LLMChain
 import streamlit as st
 
 from file_handler import clone_github_repo, load_and_index_files
-from utils import format_documents
+from utils import format_documents, api_key
 
 
-os.environ['OPENAI_API_KEY'] = st.secrets["openai_key"]
+# os.environ['OPENAI_API_KEY'] = st.secrets["openai_key"]
+os.environ['OPENAI_API_KEY'] = api_key
 
 
 def main(url):
