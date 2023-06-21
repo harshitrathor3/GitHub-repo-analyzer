@@ -3,20 +3,16 @@ import tempfile
 from langchain.llms import OpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
-import streamlit as st
+
 
 from file_handler import clone_github_repo, load_and_index_files
 from utils import format_documents
 
 
-#os.environ['OPENAI_API_KEY'] = api_key
 os.environ['OPENAI_API_KEY'] = st.secrets["openai_key"]
 
 
-
 def main(url):
-    # api_key = st.text_input('Enter your API key (this will be deleted when you close the application) : ')
-    
     github_url = url
     repo_name = github_url.split('/')[-1]
     print('Clonning the repositories.....')
@@ -67,5 +63,3 @@ def main(url):
 
         else:
             print("\n\nCouldn't clone github repo\n\n")
-
-        
